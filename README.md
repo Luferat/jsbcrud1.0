@@ -35,6 +35,6 @@ A documentação da criação e operação do aplicativo está [neste Gist](http
 
 3. _Obviamente, os códigos abaixo são passíveis de erro de sintaxe, de lógica, falhas de implementação e incompatibilidades que precisarão ser resolvidas a cada momento. Use ferramentas de solução de problemas, IA, fóruns especializados e consulte colegas de classe para ajudar nas soluções. Use o campo **Comentários** no final desta página para deixar suas colaborações e ajudar a melhorar este documento._
 
-
+---
 &copy; Copyright 2025 André Luferat<br>
 Under [MIT License](https://opensource.org/license/mit)
