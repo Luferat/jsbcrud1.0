@@ -1,5 +1,6 @@
 package com.jsbcrud.www.config;
 
+import lombok.Data;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
@@ -7,7 +8,7 @@ import org.springframework.stereotype.Component;
 import java.time.LocalDate;
 
 @RequiredArgsConstructor
-@Getter
+@Data
 @Component
 public class Config {
     private final String name = "Java Spring Boot CRUD";
@@ -16,6 +17,7 @@ public class Config {
     private final int year = 2025;
     private final String copyright = "&copy [YEAR] Joca da Silva";
     private final String logo = "&#128230";
+    private final int cookieHoursLive = 48;
 
     public String getCopyright() {
         int currentYear = LocalDate.now().getYear();
