@@ -15,5 +15,6 @@ public class GlobalModelAttributes {
         model.addAttribute("copyright", config.getCopyright());
         model.addAttribute("sitename", config.getHeaderName());
         model.addAttribute("logo", config.getLogo());
+        model.addAttribute("loggedUser", null);
     }
 }
