@@ -37,4 +37,4 @@ A documentação da criação e operação do aplicativo está [neste Gist](http
 
 ---
 &copy; Copyright 2025 André Luferat<br>
-Under [MIT License](https://opensource.org/license/mit)
+Licensed under [MIT License](https://opensource.org/license/mit)
