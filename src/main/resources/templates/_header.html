@@ -22,7 +22,7 @@
         <a href="/cat/list">Categorias</a>
         <a href="/about">Sobre</a>
         <#if loggedUser??>
-        <span>Olá ${loggedUser.name}!
+        <span>Olá ${loggedUser.firstName}!
             <a href="/logout" onclick="return confirm('Tem certeza que deseja sair do aplicativo?')">Sair</a>
         </span>
     </#if>
