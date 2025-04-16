@@ -33,17 +33,16 @@ public class LoginController {
     public String doLogin(
             @RequestParam String email,
             @RequestParam String password,
-            HttpServletRequest request,
             HttpServletResponse response,
             Model model
     ) {
-        Optional<Account> userOpt = accountRepository.findByEmail(email);
+        Optional<Account> userOpt = accountRepository.findByEmailAndStatus(email, Account.Status.ON);
 
         if (userOpt.isPresent()) {
             String hashedPassword = HashUtil.sha256(password);
 
             if (userOpt.get().getPassword().equals(hashedPassword)) {
-                // Criar cookie persistente
+                // Criar cookie
                 Cookie loginCookie = new Cookie("user", userOpt.get().getId().toString());
                 loginCookie.setMaxAge(config.getCookieHoursLive() * 60 * 60);
                 loginCookie.setHttpOnly(true);
@@ -68,5 +67,4 @@ public class LoginController {
         response.addCookie(loginCookie);
         return "redirect:/login";
     }
-
 }
