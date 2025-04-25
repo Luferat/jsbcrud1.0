@@ -5,7 +5,6 @@ import com.jsbcrud.www.model.Account;
 import com.jsbcrud.www.repository.AccountRepository;
 import com.jsbcrud.www.util.HashUtil;
 import jakarta.servlet.http.Cookie;
-import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
