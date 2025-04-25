@@ -4,7 +4,7 @@
 <p>Você precisa fazer login para usar o aplicativo.</p>
 
 <#if error??>
-<p class="error"><strong>${error}</strong></p>
+<p style="color: red;"><strong>${error}</strong></p>
 </#if>
 
 <form method="post" name="login" action="/login">
@@ -15,7 +15,7 @@
 
     <p>
         <label for="loginPassword">Senha:</label>
-        <input type="text" name="password" id="loginPassword" required value="Senha123">
+        <input type="password" name="password" id="loginPassword" required value="Senha123">
     </p>
 
     <p>

@@ -35,11 +35,7 @@ public class CategoryController {
     }
 
     @GetMapping("/delete/{id}")
-    public String deleteCat(
-            @PathVariable Integer id,
-            HttpServletRequest request,
-            RedirectAttributes redirectAttributes
-    ) {
+    public String deleteCat(@PathVariable Integer id, HttpServletRequest request, RedirectAttributes redirectAttributes) {
 
         Account loggedUser = (Account) request.getAttribute("loggedUser");
 
@@ -80,12 +76,7 @@ public class CategoryController {
     }
 
     @PostMapping("/new")
-    public String createCat(
-            @RequestParam String name,
-            @RequestParam String description,
-            HttpServletRequest request,
-            RedirectAttributes redirectAttributes,
-            Category category) {
+    public String createCat(@ModelAttribute Category category, HttpServletRequest request, RedirectAttributes redirectAttributes) {
         // Obtém o usuário logado
         Account loggedUser = (Account) request.getAttribute("loggedUser");
 
@@ -96,8 +87,6 @@ public class CategoryController {
         }
 
         // Salva a nova categoria com status ON
-        category.setName(name);
-        category.setDescription(description);
         category.setStatus(Category.Status.ON);
         categoryRepository.save(category);
 
@@ -136,13 +125,16 @@ public class CategoryController {
                                  RedirectAttributes redirectAttributes,
                                  HttpServletRequest request
     ) {
+
         Account loggedUser = (Account) request.getAttribute("loggedUser");
+
         if (loggedUser == null || loggedUser.getType() != Account.Type.ADMIN) {
             redirectAttributes.addFlashAttribute("error", "Acesso negado!");
             return "redirect:/cat/list";
         }
 
         Category category = categoryRepository.findById(id).orElse(null);
+
         if (category == null || category.getStatus() != Category.Status.ON) {
             redirectAttributes.addFlashAttribute("error", "Categoria não encontrada!");
             return "redirect:/cat/list";
@@ -156,4 +148,5 @@ public class CategoryController {
 
         return "redirect:/cat/list";
     }
+
 }
